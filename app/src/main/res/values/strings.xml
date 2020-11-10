@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PI2020</string>
+    <string name="text_registrarse">Registrarse</string>
+    <string name="text_iniciar_sesion">Iniciar sesion</string>
+    <string name="text_nombre">Nombre completo</string>
+    <string name="text_correo">Correo electronico</string>
+    <string name="text_clave">Clave</string>
 </resources>
