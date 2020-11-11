@@ -4,5 +4,7 @@
     <string name="text_iniciar_sesion">Iniciar sesion</string>
     <string name="text_nombre">Nombre completo</string>
     <string name="text_correo">Correo electronico</string>
-    <string name="text_clave">Clave</string>
+    <string name="text_clave">Contraseña</string>
+    <string name="txt_repetir_clave">Confirma tu contraseña</string>
+    <string name="text_siguiente">Siguiente</string>
 </resources>
