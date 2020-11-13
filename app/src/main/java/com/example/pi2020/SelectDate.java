@@ -80,7 +80,11 @@ public class SelectDate extends AppCompatActivity  {
                             boolean succes = jsonResponse.getBoolean("succes");
                             if(succes){
 
+                               Intent intent= new Intent(SelectDate.this,AddCrop.class);
 
+                               intent.putExtra("nomCultivo",cultivo);
+                               intent.putExtra("usernameP",usernameP);
+                               SelectDate.this.startActivity(intent);
 
 
 

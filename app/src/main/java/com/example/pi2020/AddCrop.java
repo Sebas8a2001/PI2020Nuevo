@@ -1,20 +1,25 @@
 package com.example.pi2020;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class AddCrop extends AppCompatActivity {
  Button btn_consejo1,btn_consejo2,btn_consejo3,btn_consejo4,btn_consejo5,btn_consejo6,btn_consejo7,btn_consejo8,btn_agregarC;
  String namCulture,usernameP;
- TextView txt_culture;
+ TextView txt_culture,txt_cul1,txt_cul2,txt_cul3,txt_cul4,txt_cul5,txt_cul6,txt_cul7,txt_cul8,txt_cul9,txt_cul10;
 
 
     @Override
@@ -29,26 +34,217 @@ public class AddCrop extends AppCompatActivity {
         btn_consejo5=(Button)findViewById(R.id.button5);
         btn_consejo6=(Button)findViewById(R.id.button6);
         btn_consejo7=(Button)findViewById(R.id.button7);
-        txt_culture=(TextView)findViewById(R.id.txt_response);
+        txt_cul1=(TextView)findViewById(R.id.txt_cul1);
+        txt_cul2=(TextView)findViewById(R.id.txt_cul2);
+        txt_cul3=(TextView)findViewById(R.id.txt_cul3);
+        txt_cul4=(TextView)findViewById(R.id.txt_cul4);
+        txt_cul5=(TextView)findViewById(R.id.txt_cul5);
+        txt_cul6=(TextView)findViewById(R.id.txt_cul6);
+        txt_cul7=(TextView)findViewById(R.id.txt_cul7);
+        txt_cul8=(TextView)findViewById(R.id.txt_cul8);
+        txt_cul9=(TextView)findViewById(R.id.txt_cul9);
+        txt_cul10=(TextView)findViewById(R.id.txt_cul10);
+
         btn_agregarC=(Button)findViewById(R.id.btn_agregarC);
         Bundle parameter= this.getIntent().getExtras();
-        namCulture= parameter.getString("namCulture");
+         namCulture= parameter.getString("nomCultivo");
+
         usernameP= parameter.getString("usernameP");
 
-        if(namCulture.equals("null")){
-            namCulture="Sin cultivos";
 
+        Response.Listener<JSONArray> respoListener = new Response.Listener<JSONArray>() {
+        public void onResponse(JSONArray response) {
+            JSONObject jsonObject=null;
+
+            for (int i=0;i<response.length();i++) {
+
+                try {
+                    jsonObject=response.getJSONObject(i);
+                    if(txt_cul1.getText().length()==0) {
+
+                        txt_cul1.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul1.getText().toString();
+
+                        txt_cul1.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+
+                    }else if(txt_cul2.getText().length()==0){
+
+                        txt_cul2.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul2.getText().toString();
+
+                        txt_cul2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+                    }else if(txt_cul3.getText().length()==0){
+
+                        txt_cul3.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul3.getText().toString();
+
+                        txt_cul3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+
+                            }
+                        });
+
+
+                    }else if(txt_cul4.getText().length()==0){
+
+                        txt_cul4.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul4.getText().toString();
+
+                        txt_cul4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+                    }else if(txt_cul5.getText().length()==0){
+                        txt_cul5.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul5.getText().toString();
+
+                        txt_cul5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+                    }else if(txt_cul6.getText().length()==0){
+                        txt_cul6.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul6.getText().toString();
+
+                        txt_cul6.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+                    }else if(txt_cul7.getText().length()==0){
+                        txt_cul7.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul7.getText().toString();
+
+                        txt_cul7.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+                    }else if(txt_cul8.getText().length()==0){
+                        txt_cul8.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul8.getText().toString();
+
+                        txt_cul8.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+                    }else if(txt_cul9.getText().length()==0){
+                        txt_cul9.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul9.getText().toString();
+
+                        txt_cul9.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+                    }else if(txt_cul10.getText().length()==0){
+                        txt_cul10.setText(jsonObject.getString("cultivo"));
+                        final String nomc= jsonObject.getString("nomcultivo");
+                        final String cul=txt_cul10.getText().toString();
+
+                        txt_cul10.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent= new Intent(AddCrop.this, Culture.class);
+                                intent.putExtra("nomCultivo",nomc);
+                                intent.putExtra("cultivo",cul);
+                                AddCrop.this.startActivity(intent);
+                            }
+                        });
+
+
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+    };
+        AddCropRequest addCropRequest= new AddCropRequest(usernameP,respoListener);
+        RequestQueue queue = Volley.newRequestQueue(AddCrop.this);
+        queue.add(addCropRequest);
 
-        txt_culture.setText(namCulture);
+
+
 
 
 
         btn_consejo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String consejo = "Es importante no querer abarcar todas las hortalizas desde el principio ya que no será efectivo. Lo importante es comenzar con una variedad menor y que luego, paulatinamente, incorporar otras plantas diferentesDe esta manera podrás controlar todos los cultivos y sacar el máximo potencial de cada hortaliza. Además, es necesario que a tu huerto le dé un mínimo de 5 horas diarias de sol para garantizar la efectividad del cultivo ya que, en caso de no tener una suficiente exposición al sol, no tendrán un buen desarrollo";
-                String titulo="1.PLANTA CON MODERACIÓN";
+                String consejo = "La primera operación que hay que realizar para asegurarse que un cultivo pueda alcanzar el mejor rendimiento, es proporcionar a las plantas un suelo en las mejores condiciones. El objetivo es preparar un lecho con los nutrientes adecuados y con unas condiciones que permitan la germinación de la semilla y el establecimiento del cultivo para su posterior desarrollo. Esto se ha venido haciendo mediante técnicas agresivas tradicionalmente, como el volteo, la quema de rastrojo, etc. Estas, además de no ser sostenibles a largo plazo, requieren mano de obra, especialmente en contextos con una baja mecanización, convirtiéndose en una carga para los pequeños agricultores que han de preparar el terreno con herramientas básicas y de forma manual.";
+                String titulo="1.Preparación del terreno";
                 Intent intent= new Intent(AddCrop.this,Advice1.class);
                 intent.putExtra("consejo", consejo);
                 intent.putExtra("titulo",titulo);
@@ -60,8 +256,8 @@ public class AddCrop extends AppCompatActivity {
         btn_consejo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String consejo = "Para que un huerto tenga un buen resultado en primer lugar es tener un suelo en buenas condiciones. Por ejemplo, si el suelo está muy encharcado, se debe fresar la tierra para conseguir que no se acumule tanta agua. Por el contrario, si está muy seca, se fresará para conseguir acumular mayor cantidad de agua. En segundo lugar, también es importante suministrar el abono y el sustrato adecuado. Existen una gran variedad de opciones para conseguirlo, como es el caso del abono orgánico, que se puede conseguir en casa de forma rápida y fácil.";
-                String titulo="2.POSEE UN TERRENO DE CALIDAD";
+                String consejo = "Entre las numerosas labores que determinan el rendimiento de un cultivo, la siembra y escarda son de las principales. Unas dosis de siembra adecuadas, con marcos de siembra correctos son cruciales para el desarrollo de la planta. Esto también está relacionado con las condiciones del suelo y el sistema de cultivo. De la siembra a voleo hasta la siembra de precisión neumática, hay toda una gama de herramientas y equipos que pueden mejorar las operaciones de siembra a la vez que se adaptan al contexto económico, social y ambiental del agricultor";
+                String titulo="2.Operaciones de cultivo";
                 Intent intent= new Intent(AddCrop.this,Advice1.class);
                 intent.putExtra("consejo", consejo);
                 intent.putExtra("titulo",titulo);
@@ -93,14 +289,8 @@ public class AddCrop extends AppCompatActivity {
         btn_consejo4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String consejo = "Para asegurarse la calidad de tus hortalizas, el clima es uno de los factores más importantes en tu huerto. De hecho, si los cultivos son autóctonos, menor será la probabilidad de contraer enfermedades o plagas.\n" +
-                        "\n" +
-                        "Es importante saber el momento y el clima adecuado para cada una de ellas, teniendo siempre en cuenta qué hortalizas son propias de tu zona.\n" +
-                        "\n" +
-                        "Si en el lugar que tu vives existe un gran nivel de contaminación, la opción idónea es plantar aquellos alimentos que son menos propicios a la contaminación (zanahorias, cebolla, ajo, remolacha, etc.).\n" +
-                        "Si el clima de tu zona es húmedo y frío, lo ideal es cultivar brócoli, col o guisante.\n" +
-                        "Si el clima de tu zona es seco y caluroso podrás cultivar tomate, pimiento, calabacín, perejil o pepino. En este caso recuerda siempre suministrar el agua y el sustrato necesarios.";
-                String titulo="4.PLANTA ACORDE AL CLIMA DE TU ZONA";
+                String consejo = "La escarda o eliminación de malas hierbas usando herramientas convencionales como una azada de mano, puede llevar 140 horas por persona y hectária (que disminuye hasta 65 horas por hectária en la tercera escarda). Las malas hierbas se eliminan en momentos críticos para evitar su establecimiento y que dañen al cultivo. Una escarda tardía del cultivo anterior se ha de hacer para evitar que sus semillas permanezcan. El uso de herramientas adecuadas y de un equipo correcto, pueden contribuir a hacer esta labor más rápido y con menos mano de obra, mejorando la calidad de vida del agricultor y la eficiencia de su trabajo. Hay dos modos de control de las malas hierbas: mecánico o químico. Para la opción mecánica, el objetivo es erradicar la planta y para la química es matarla mediante un agente químico de acción selectiva, que normalmente se aplican mediante pulverización.";
+                String titulo="4.Escarda";
                 Intent intent= new Intent(AddCrop.this,Advice1.class);
                 intent.putExtra("consejo", consejo);
                 intent.putExtra("titulo",titulo);
@@ -167,5 +357,9 @@ public class AddCrop extends AppCompatActivity {
 
 
     }
+
+
+
+
 
 }

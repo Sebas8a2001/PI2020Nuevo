@@ -14,13 +14,15 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
-    TextView tv_recContraseña;
+    TextView tv_recContraseña,txt_cul,txt_cul2;
     EditText edt_usuario,edt_pass;
     Button btn_login,btn_volver;
+    String return1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,7 @@ public class Login extends AppCompatActivity {
         edt_usuario=(EditText)findViewById(R.id.TV_usu);
         edt_pass=(EditText)findViewById(R.id.TV_pas);
         tv_recContraseña=(TextView)findViewById(R.id.rec_contraseña) ;
+
 
         btn_login=(Button)findViewById(R.id.Btn_iniciar);
         btn_volver=(Button)findViewById(R.id.btn_volver1);
@@ -56,26 +59,31 @@ public class Login extends AppCompatActivity {
                 String password= edt_pass.getText().toString();
 
                 Response.Listener<String> respoListener = new Response.Listener<String>() {
+
+
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonResponse= new JSONObject(response);
+                            JSONObject jsonObject= new JSONObject(response);
+                            boolean succes= jsonObject.getBoolean("succes");
+                            if((edt_usuario.getText().length()==0)||edt_pass.getText().length()==0){
+                                succes=false;
 
-                            boolean succes = jsonResponse.getBoolean("succes");
+                            }
                             if(succes){
-                             String namCulture= jsonResponse.getString("cultivo");
-                             Intent intent= new Intent(Login.this,AddCrop.class);
-                             intent.putExtra("namCulture",namCulture);
-                             intent.putExtra("usernameP",username);
 
-                              Login.this.startActivity(intent);
+                                String nomCul= jsonObject.getString("nomCultivo");
+                                Intent intent= new Intent(Login.this,AddCrop.class);
+                                intent.putExtra("usernameP",username);
+                                intent.putExtra("nomCultivo",nomCul);
+                                Login.this.startActivity(intent);
 
 
 
                             }else{
 
                                 AlertDialog.Builder builder= new AlertDialog.Builder(Login.this);
-                                builder.setMessage("error registro")
+                                builder.setMessage("error Login")
                                         .setNegativeButton("Retry",null)
                                         .create().show();
                             }

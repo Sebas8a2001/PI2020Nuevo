@@ -52,7 +52,6 @@ public class Register extends AppCompatActivity {
 
                             boolean succes = jsonResponse.getBoolean("succes");
                             if(succes){
-
                             Intent intent= new Intent(Register.this,Login.class);
                             Register.this.startActivity(intent);
 
