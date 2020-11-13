@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <TextView
+        android:id="@+id/tvPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Perfil"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/vector_settings" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_below="@+id/tvPerfil"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/photo_profile"
+        android:elevation="15dp"
+        android:src="@drawable/photo_default"
+        app:civ_border_color="#555555"
+        app:civ_border_width="1dp" />
+
+    <ImageButton
+        android:id="@+id/btnChangePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/profile_image"
+        android:layout_alignBottom="@+id/profile_image"
+        android:background="@android:color/transparent"
+        android:elevation="20dp"
+        android:src="@drawable/vector_change_photo" />
+
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Nombre" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:background="@drawable/et_round"
+        android:enabled="false"
+        android:padding="@dimen/padding_edt"
+        android:text="Juan D" />
+
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNombre"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="Correo electronico" />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCorreo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:background="@drawable/et_round"
+        android:enabled="false"
+        android:padding="@dimen/padding_edt"
+        android:text="juan@gmail.com" />
+
+    <TextView
+        android:id="@+id/tvClave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCorreo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="Contraseña" />
+
+    <EditText
+        android:id="@+id/etClave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvClave"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:background="@drawable/et_round"
+        android:padding="@dimen/padding_edt"
+        android:enabled="false"
+        android:text="*******" />
+
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etClave"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:background="@drawable/btn_round"
+        android:text="Editar"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_bar"
+        android:padding="18dp"
+        android:weightSum="10">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.3"
+            android:background="@android:color/transparent"
+            android:src="@drawable/vector_hoja" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.3"
+            android:background="@android:color/transparent"
+            android:src="@drawable/vector_cloud" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.3"
+            android:background="@android:color/transparent"
+            android:src="@drawable/vector_user_select" />
+
+    </LinearLayout>
+</RelativeLayout>

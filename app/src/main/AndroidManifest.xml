@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".SelectDate"></activity>
+        <activity android:name=".Profile"></activity>
+        <activity android:name=".SelectDate" />
         <activity android:name=".SelectCulti" />
         <activity android:name=".Advice1" />
         <activity android:name=".AddCrop" />
