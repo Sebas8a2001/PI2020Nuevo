@@ -2,6 +2,7 @@ package com.example.pi2020;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddCrop extends AppCompatActivity {
- Button btn_consejo1,btn_consejo2,btn_consejo3,btn_consejo4,btn_consejo5,btn_consejo6,btn_consejo7,btn_consejo8,btn_agregarC;
+ CardView btn_consejo1,btn_consejo2,btn_consejo3,btn_consejo4,btn_consejo5,btn_consejo6,btn_consejo7,btn_consejo8;
+ Button btn_agregarC;
  String namCulture,usernameP;
  TextView txt_culture;
 
@@ -22,13 +24,13 @@ public class AddCrop extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_crop);
 
-        btn_consejo1=(Button)findViewById(R.id.button1);
-        btn_consejo2=(Button)findViewById(R.id.button2);
-        btn_consejo3=(Button)findViewById(R.id.button3);
-        btn_consejo4=(Button)findViewById(R.id.button4);
-        btn_consejo5=(Button)findViewById(R.id.button5);
-        btn_consejo6=(Button)findViewById(R.id.button6);
-        btn_consejo7=(Button)findViewById(R.id.button7);
+        btn_consejo1=findViewById(R.id.button1);
+        btn_consejo2=findViewById(R.id.button2);
+        btn_consejo3=findViewById(R.id.button3);
+        btn_consejo4=findViewById(R.id.button4);
+        btn_consejo5=findViewById(R.id.button5);
+        btn_consejo6=findViewById(R.id.button6);
+        btn_consejo7=findViewById(R.id.button7);
         txt_culture=(TextView)findViewById(R.id.txt_response);
         btn_agregarC=(Button)findViewById(R.id.btn_agregarC);
         Bundle parameter= this.getIntent().getExtras();
