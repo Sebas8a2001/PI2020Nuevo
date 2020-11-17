@@ -41,7 +41,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name= edt_name.getText().toString();
-                String username= edt_username.getText().toString();
+                final String username= edt_username.getText().toString();
                 String password= edt_password.getText().toString();
 
                 Response.Listener<String> respoListener = new Response.Listener<String>() {
@@ -51,8 +51,14 @@ public class Register extends AppCompatActivity {
                             JSONObject jsonResponse= new JSONObject(response);
 
                             boolean succes = jsonResponse.getBoolean("succes");
+
+
+
+
                             if(succes){
-                            Intent intent= new Intent(Register.this,Login.class);
+
+
+                                Intent intent= new Intent(Register.this,Login.class);
                             Register.this.startActivity(intent);
 
 
@@ -61,7 +67,7 @@ public class Register extends AppCompatActivity {
                             }else{
 
                                 AlertDialog.Builder builder= new AlertDialog.Builder(Register.this);
-                                builder.setMessage("error registro")
+                                builder.setMessage("error registro, Usuario ya existe")
                                         .setNegativeButton("Retry",null)
                                         .create().show();
                             }
