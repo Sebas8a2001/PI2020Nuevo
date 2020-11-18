@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -18,7 +19,8 @@ import org.json.JSONObject;
 
 public class Register extends AppCompatActivity {
      EditText edt_name, edt_username, edt_password;
-     Button btn_volver,btn_registar;
+     Button btn_registar, btnLogin;
+     ImageButton btn_volver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,9 @@ public class Register extends AppCompatActivity {
         edt_name=(EditText)findViewById(R.id.edt_name);
         edt_username=(EditText)findViewById(R.id.edt_username);
         edt_password=(EditText)findViewById(R.id.edt_password);
-        btn_volver=(Button)findViewById(R.id.btn_volver2);
+        btn_volver= findViewById(R.id.btn_volver2);
         btn_registar=(Button)findViewById(R.id.btn_registrar);
+        btnLogin = findViewById(R.id.btnLogin);
 
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,5 +85,12 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Register.this,Login.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -1,43 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Verificar_usuarioPassword">
+    tools:context=".CheckUsername">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvCheckTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="116dp"
-        android:text="Digite su usuario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Recupera tu cuenta"
+        android:textSize="@dimen/size_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLegendCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCheckTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="32dp"
+        android:text="Introduce la direccion de correo asociada a tu cuenta para poder cambiar tu contraseña" />
+
+
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLegendCheck"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/text_correo" />
 
     <EditText
         android:id="@+id/edt_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tvCorreo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:background="@drawable/et_round"
         android:ems="10"
-        android:hint="Usuario"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        android:padding="@dimen/padding_edt" />
 
     <Button
         android:id="@+id/btn_verificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="68dp"
-        android:text="Verificar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_usuario" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_round"
+        android:text="@string/text_siguiente"
+        android:textColor="@color/white" />
+</RelativeLayout>

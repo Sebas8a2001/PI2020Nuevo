@@ -21,8 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         android:text="Consejos para tu cultivo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nom2Cult" />
@@ -97,36 +96,80 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/task1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="Tarea1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/task2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
         android:layout_marginTop="8dp"
-        android:text="Tarea2"
+        android:text="TAREA2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/task1" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/task3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
         android:layout_marginTop="8dp"
-        android:text="Tarea3"
+        android:text="TAREA3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/task2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="123dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/text_clave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.361"
+        app:srcCompat="@drawable/previo" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="110dp"
+        android:layout_height="86dp"
+        android:layout_marginEnd="92dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:onClick="tomarfoto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.714"
+        app:srcCompat="@drawable/camara" />
+
+    <Button
+        android:id="@+id/btn_galle"
+        android:layout_width="206dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="36dp"
+        android:text="Ver fotos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="Fotos del progreso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

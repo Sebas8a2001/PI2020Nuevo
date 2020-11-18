@@ -1,31 +1,152 @@
 package com.example.pi2020;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Culture extends AppCompatActivity {
  String cultivo, nomCultivo,title,consejo;
  TextView txt_nomCultivo;
- Button btn_cs1,btn_cs2,btn_cs3,btn_cs4;
+ Button btn_cs1,btn_cs2,btn_cs3,btn_cs4,btn_task1,btn_task2,btn_task3,btn_galle;
+ ImageView img;
+ ImageButton im1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_culture);
+
+
         Bundle bundle= this.getIntent().getExtras();
         cultivo= bundle.getString("cultivo");
         nomCultivo= bundle.getString("nomCultivo");
         txt_nomCultivo= (TextView)findViewById(R.id.txt_nom2Cult);
+        btn_galle=(Button)findViewById(R.id.btn_galle);
         btn_cs1=(Button) findViewById(R.id.btn_cs1);
         btn_cs2=(Button)findViewById(R.id.btn_cs2);
         btn_cs3=(Button)findViewById(R.id.btn_cs3);
         btn_cs4=(Button)findViewById(R.id.btn_cs4);
+        btn_task1=(Button)findViewById(R.id.task1);
+        btn_task2=(Button)findViewById(R.id.task2);
+        btn_task3=(Button)findViewById(R.id.task3);
+        img=(ImageView)findViewById(R.id.imageView);
 
-        txt_nomCultivo.setText(nomCultivo);
+        if (ContextCompat.checkSelfPermission(Culture.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Culture.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(Culture.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
+        }
+
+        btn_galle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(android.content.Intent.ACTION_VIEW);
+                intent.setType("image/*");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+
+            txt_nomCultivo.setText(nomCultivo);
+
+        btn_task1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Culture.this,Task_culture.class);
+               String titleT="REGAR";
+               String consejoT="VERANO: de 2 a 3 veces al día, debiendo ser el más abundante el realizado al atardecer, para evitar pérdidas de agua innecesarias en las horas de más sol, además de posibles quemaduras en las hojas (en el caso de que realices el riego por aspersión).\n" +
+                               "\nINVIERNO: una vez al día, de forma poco cuantiosa, y realizándolo preferiblemente al amanecer, para evitar posibles heladas \n"+
+                                "\n¿QUÉ RIEGOS USAR EN LOS CULTIVOS?\n" +
+                       "Igualmente, también es importante conocer los sistemas de riego que podemos aplicar en una explotación, tanto a la hora de proporcionarle el agua necesaria como de aplicar los correspondientes tratamientos.\n" +
+                       "\n" +
+                       "EL RIEGO POR GOTEO\n" +
+                       "Permite que el agua se infiltre directamente en el suelo llegando a la zona de influencia radicular a través de un sistema de tuberías e irrigadores.\n" +
+                       "\n" +
+                       "EL SISTEMA HIDROPÓNICO\n" +
+                       "Posibilita que las raíces de las plantas reciban directamente el agua, con sus correspondientes tratamientos \n"+
+                       "\n" +
+                       "EL RIEGO POR ASPERSIÓN\n" +
+                       "Es el más adecuado para hacer un reparto homogéneo del agua teniendo en cuenta el clima y las necesidades de cada cultivo. Puede realizarse incluso con microaspersores para conseguir gotas muy finas que se distribuyan todavía mejor.\n" +
+                       "\n" +
+                       "RIEGO POR NEBULIZACIÓN\n" +
+                       "Produce una niebla fina al trabajar con presiones relativamente elevadas.\n" +
+                       "\n" +
+                       "Aplicar el sistema de riego más adecuado para las características de cada explotación también nos resultar de ayuda a la hora de prevenir la aplicación de un exceso de fertilizante.";
+               intent.putExtra("titleT",titleT);
+               intent.putExtra("consejoT",consejoT);
+               Culture.this.startActivity(intent);
+
+
+
+            }
+        });
+
+
+        btn_task2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Culture.this,Task_culture.class);
+                String titleT="LIMPIEZA DEL AREA DE CULTIVO";
+                String consejoT="• ARADO\n" +
+                        "Consiste en voltear la parte superficial del suelo a profundidades que varían hasta los 45 cm. Se puede voltear el suelo o removerse, dependiendo del implemento que se utilice. Generalmente se usa el arado de vertedera o de discos. Esta práctica debe hacerla cuando el suelo tiene todavía más del 30% de humedad. Con la aradura se ayuda a incorporarrastrojos de cultivos anteriores, se destruye malezas, se expone plagas de suelo a los rayos solares y a los enemigos naturales.\n" +
+                        "\n" +
+                        "• RASTREO\n" +
+                        "Esta práctica persigue pulverizar los terrones que han quedado después de la aradura, ésta debe realizarse cuando el suelo tenga la suficiente humedad que permita que los terrones se desmenucen. Se puede utilizar rastra pesada y rastra pulidora. El número depasadas depende del tamaño de los terrones y el mullido que se quiera dejar, pero se recomienda dejar lo más mullido que se pueda, porque de esta labor depende mucho la calidad de la cama y la eficiencia en el trasplante. Antes del último paso de rastra esta se aprovecha para incorporar las enmiendas de cal y las aportaciones de materia orgánica que se hagan en el terreno\n" +
+                        "\n" +
+                        "\n" +
+                        "• OTRAS LABORES DE PREPARACION\n" +
+                        "Además de las labores antes mencionadas, cuando se tienen terrenos con pendientes, es necesario sembrar en curvas a nivel para evitar erosión del terreno, y cuando se tienen terrenos con problemas de inundación o terrenos no nivelados, es necesario hacer un sistema de drenajes que incluyan los drenes interiores y drenes recolectores, para evitar anegamientos dentro del cultivo.";
+                intent.putExtra("consejoT",consejoT);
+                intent.putExtra("titleT",titleT);
+                Culture.this.startActivity(intent);
+            }
+        });
+
+        btn_task3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Culture.this,Task_culture.class);
+                String titleT="APLICAR FERTILIZANTES";
+                String consejoT="Cobertura total: los fertilizantes se aplican de manera uniforme en toda la superficie del suelo.\n" +
+                        "\n" +
+                        "En bandas: se realizan aplicaciones en bandas antes de la plantación o siembra cerca del lugar donde serán colocadas las semillas o plántulas.\n" +
+                        "\n" +
+                        "Al decidir aplicar en bandas se deben tomar en cuenta las siguientes consideraciones:\n" +
+                        "\n" +
+                        " \n" +
+                        "\n" +
+                        "El suelo: suelos arenosos retienen menor cantidad de nutrientes que aquellos de textura fina. Es por esto que se recomienda aplicar menor cantidad de fertilizantes, pero con mayor frecuencia.\n" +
+                        "\n" +
+                        " \n" +
+                        "\n" +
+                        "Clima: las precipitaciones incrementan el riesgo de lixiviación del nitrógeno y climas cálidos pérdidas por volatilización.";
+                intent.putExtra("consejoT",consejoT);
+                intent.putExtra("titleT",titleT);
+                Culture.this.startActivity(intent);
+            }
+        });
+
+
 
         btn_cs1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -356,4 +477,58 @@ public class Culture extends AppCompatActivity {
 
 
     }
+
+    String currentPhotoPath;
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    static final int REQUEST_TAKE_PHOTO = 1;
+
+    public void tomarfoto (View view) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.example.android.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI.toString());
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
+    }
+static final int REQUEST_IMAGE_CAPTURE=1;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            img.setImageBitmap(imageBitmap);
+        }
+    }
+
 }

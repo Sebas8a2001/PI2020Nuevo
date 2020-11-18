@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -19,21 +20,33 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Login extends AppCompatActivity {
-    TextView tv_recContraseña,txt_cul,txt_cul2;
-    EditText edt_usuario,edt_pass;
-    Button btn_login,btn_volver;
+
+    TextView txt_cul,txt_cul2;
+
+
     String return1;
+
+    EditText edt_usuario,edt_pass;
+    Button btn_login, btnRegistro, tv_recContraseña;
+    ImageButton btn_volver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         edt_usuario=(EditText)findViewById(R.id.TV_usu);
         edt_pass=(EditText)findViewById(R.id.TV_pas);
-        tv_recContraseña=(TextView)findViewById(R.id.rec_contraseña) ;
+        tv_recContraseña= findViewById(R.id.rec_contraseña) ;
+
 
 
         btn_login=(Button)findViewById(R.id.Btn_iniciar);
-        btn_volver=(Button)findViewById(R.id.btn_volver1);
+        btn_volver= (ImageButton) findViewById(R.id.btn_volver);
+
+        btn_login = findViewById(R.id.Btn_iniciar);
+        btn_volver = findViewById(R.id.btn_volver );
+        btnRegistro = findViewById(R.id.btn_registrar);
+
 
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +110,14 @@ public class Login extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(Login.this);
                 queue.add(loginRequest);
 
+            }
+        });
+
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Login.this, Register.class);
+                startActivity(intent);
             }
         });
 
