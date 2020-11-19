@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Edit_profile"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".Edit_profile" />
         <activity android:name=".Profile1" />
         <activity android:name=".Get_weather" />
         <activity android:name=".Task_culture" />

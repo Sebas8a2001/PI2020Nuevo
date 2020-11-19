@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Profile1 extends AppCompatActivity {
-    String usernameP;
+    String usernameP, usernamep2,name,pass;
     EditText edt_name,edt_usu,edt_pass;
     ImageButton btn_settings;
     Button btn_edi;
@@ -35,12 +35,9 @@ public class Profile1 extends AppCompatActivity {
         btn_edi=(Button)findViewById(R.id.btnEditar);
 
 
-        btn_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
+
+
 
 
 
@@ -69,12 +66,12 @@ public class Profile1 extends AppCompatActivity {
                     boolean succes= jsonObject.getBoolean("succes");
 
                     if(succes){
-                        String usernamep= jsonObject.getString("username");
-                        String name=jsonObject.getString("name");
-                        String pass= jsonObject.getString("contraseña");
+                        usernamep2= jsonObject.getString("username");
+                        name=jsonObject.getString("name");
+                        pass= jsonObject.getString("contraseña");
 
                         edt_name.setText(name);
-                        edt_usu.setText(usernamep);
+                        edt_usu.setText(usernamep2);
                         edt_pass.setText(pass);
 
 
@@ -95,5 +92,15 @@ public class Profile1 extends AppCompatActivity {
         ProfileRequest profileRequest= new ProfileRequest(usernameP, respoListener);
         RequestQueue queue = Volley.newRequestQueue(Profile1.this);
         queue.add(profileRequest);
+
+        btn_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Profile1.this,Settings.class);
+                intent.putExtra("usernameP",usernamep2);
+                Profile1.this.startActivity(intent);
+            }
+        });
+
     }
 }
