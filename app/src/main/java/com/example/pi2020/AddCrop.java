@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -22,6 +23,7 @@ public class AddCrop extends AppCompatActivity {
  Button btn_agregarC;
  String namCulture,usernameP;
  TextView txt_culture,txt_cul1,txt_cul2,txt_cul3,txt_cul4,txt_cul5,txt_cul6,txt_cul7,txt_cul8,txt_cul9,txt_cul10;
+ ImageButton btn_clima,btn_profile;
 
 
     @Override
@@ -50,6 +52,25 @@ public class AddCrop extends AppCompatActivity {
         btn_consejo5=findViewById(R.id.button5);
         btn_consejo6=findViewById(R.id.button6);
         btn_consejo7=findViewById(R.id.button7);
+        btn_clima=(ImageButton) findViewById(R.id.btn_clima);
+        btn_profile=(ImageButton)findViewById(R.id.btn_profile);
+
+        btn_clima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AddCrop.this,Get_weather.class);
+                AddCrop.this.startActivity(intent);
+            }
+        });
+
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AddCrop.this,Profile1.class);
+                intent.putExtra("usernameP",usernameP);
+                AddCrop.this.startActivity(intent);
+            }
+        });
 
 
         btn_agregarC=(Button)findViewById(R.id.btn_agregarC);

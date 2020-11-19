@@ -28,7 +28,7 @@ import java.util.Date;
 public class Culture extends AppCompatActivity {
  String cultivo, nomCultivo,title,consejo;
  TextView txt_nomCultivo;
- Button btn_cs1,btn_cs2,btn_cs3,btn_cs4,btn_task1,btn_task2,btn_task3,btn_galle;
+ Button btn_cs1,btn_cs2,btn_cs3,btn_cs4,btn_task1,btn_task2,btn_task3,btn_galle,btn_clima;
  ImageView img;
  ImageButton im1;
     @Override
@@ -50,6 +50,9 @@ public class Culture extends AppCompatActivity {
         btn_task2=(Button)findViewById(R.id.task2);
         btn_task3=(Button)findViewById(R.id.task3);
         img=(ImageView)findViewById(R.id.imageView);
+
+
+
 
         if (ContextCompat.checkSelfPermission(Culture.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Culture.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Culture.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);

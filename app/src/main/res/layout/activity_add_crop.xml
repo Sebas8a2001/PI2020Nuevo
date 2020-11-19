@@ -429,6 +429,7 @@
             android:src="@drawable/vector_hoja_select" />
 
         <ImageButton
+            android:id="@+id/btn_clima"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3.3"
@@ -436,6 +437,7 @@
             android:src="@drawable/vector_cloud" />
 
         <ImageButton
+            android:id="@+id/btn_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3.3"
