@@ -95,26 +95,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
-    <Button
-        android:id="@+id/btn_exit"
-        android:layout_width="50dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="52dp"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
-
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="50dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="16dp"
-        android:text="btn_deleteC"
-        app:layout_constraintStart_toEndOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/btn_exit" />
-
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
@@ -124,4 +104,24 @@
         android:text="Eliminar Cuenta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <ImageButton
+        android:id="@+id/btn_exit"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/btn_deleteC"
+        android:layout_width="42dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/btn_exit"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>

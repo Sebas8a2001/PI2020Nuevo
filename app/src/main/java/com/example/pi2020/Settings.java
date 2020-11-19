@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -16,14 +17,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Settings extends AppCompatActivity {
-Button btn_exit,btn_remove;
+ImageButton btn_exit,btn_remove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        btn_exit=(Button)findViewById(R.id.btn_exit);
-        btn_remove=(Button)findViewById(R.id.btn_delete);
+        btn_exit=(ImageButton)findViewById(R.id.btn_exit);
+        btn_remove=(ImageButton)findViewById(R.id.btn_deleteC);
         Bundle bundle= this.getIntent().getExtras();
         final String username=bundle.getString("usernameP");
 
