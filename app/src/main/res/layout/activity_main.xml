@@ -26,7 +26,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher" />
 
-
+        <ImageView
+            android:id="@+id/imgInicio"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/watering_plant"
+            app:layout_constraintBottom_toTopOf="@+id/txtInicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtInicio"
@@ -35,7 +45,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="40dp"
-            android:text="Lorem impsum blablablab lablaalb lal blalbl alblalbl abla lblabla"
+            android:text="Sembrando bienestar en tus cosechas."
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

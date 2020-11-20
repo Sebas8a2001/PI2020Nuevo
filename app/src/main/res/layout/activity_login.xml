@@ -55,7 +55,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/et_round"
             android:ems="10"
-            android:hint="Ingrese su email"
+            android:hint="Ingrese su nombre de usuario"
             android:inputType="textEmailAddress"
             android:padding="@dimen/padding_edt"
             app:layout_constraintBottom_toTopOf="@+id/TV_pas"

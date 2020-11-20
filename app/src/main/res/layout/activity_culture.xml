@@ -11,27 +11,31 @@
         android:id="@+id/txt_nom2Cult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/size_title"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
         android:text="Consejos para tu cultivo"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nom2Cult" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="390dp"
-        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,44 +46,66 @@
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp">
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                tools:ignore="MissingConstraints">
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_cs1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/consejo_round"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginVertical="10dp"
+                    android:elevation="4dp"
                     android:text="Consejo 1" />
 
                 <Button
                     android:id="@+id/btn_cs2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/consejo_round"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:elevation="4dp"
                     android:text="Consejo 2" />
 
                 <Button
                     android:id="@+id/btn_cs3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/consejo_round"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:elevation="4dp"
                     android:text="Consejo 3" />
 
                 <Button
                     android:id="@+id/btn_cs4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/consejo_round"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:elevation="4dp"
                     android:text="Consejo 4" />
 
 
             </LinearLayout>
-
 
         </HorizontalScrollView>
     </LinearLayout>
@@ -89,9 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
         android:text="Tareas Diarias"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -102,6 +128,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="Tarea1"
+        android:padding="5dp"
+        android:background="@android:color/transparent"
+        android:drawableStart="@drawable/vector_check"
+        android:drawablePadding="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -109,8 +139,11 @@
         android:id="@+id/task2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:background="@android:color/transparent"
+        android:drawableStart="@drawable/vector_check"
+        android:drawablePadding="8dp"
+        android:padding="5dp"
         android:text="TAREA2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task1" />
@@ -119,46 +152,52 @@
         android:id="@+id/task3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
         android:text="TAREA3"
+        android:padding="5dp"
+        android:background="@android:color/transparent"
+        android:drawableStart="@drawable/vector_check"
+        android:drawablePadding="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task2" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="123dp"
-        android:layout_height="106dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/photos_round"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/text_clave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.361"
         app:srcCompat="@drawable/previo" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="110dp"
-        android:layout_height="86dp"
-        android:layout_marginEnd="92dp"
-        android:background="@color/cardview_shadow_end_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_default"
         android:onClick="tomarfoto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.714"
-        app:srcCompat="@drawable/camara" />
+        android:padding="25dp"
+        android:src="@drawable/vector_camera"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/btn_galle"
-        android:layout_width="206dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/button_add"
         android:text="Ver fotos"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
@@ -169,6 +208,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="Fotos del progreso"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task3" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".Profile1">
 
     <TextView
         android:id="@+id/tvPerfil"
@@ -88,7 +88,7 @@
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="8dp"
-        android:text="Correo electronico" />
+        android:text="@string/text_correo" />
 
     <EditText
         android:id="@+id/etCorreo1"
@@ -149,7 +149,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/nav_bar"
-        android:padding="18dp"
+        android:padding="20dp"
         android:weightSum="10">
 
         <ImageButton
