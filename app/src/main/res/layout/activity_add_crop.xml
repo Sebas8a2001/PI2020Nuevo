@@ -295,10 +295,11 @@
                 android:layout_below="@+id/btn_agregarC"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
+                android:layout_marginStart="149dp"
+                android:layout_marginLeft="149dp"
                 android:layout_marginTop="18dp"
-                />
+                android:fontFamily="sans-serif-medium"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txt_cul2"
@@ -307,10 +308,11 @@
                 android:layout_below="@+id/txt_cul1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                />
+                android:layout_marginStart="149dp"
+                android:layout_marginLeft="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="17dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul3"
@@ -319,9 +321,11 @@
                 android:layout_below="@+id/txt_cul2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp" />
+                android:layout_marginStart="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="17dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul4"
@@ -330,10 +334,11 @@
                 android:layout_below="@+id/txt_cul3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                />
+                android:layout_marginStart="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul5"
@@ -342,10 +347,11 @@
                 android:layout_below="@+id/txt_cul4"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                 />
+                android:layout_marginStart="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="17dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul6"
@@ -354,10 +360,11 @@
                 android:layout_below="@+id/txt_cul5"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-              />
+                android:layout_marginStart="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul7"
@@ -366,10 +373,11 @@
                 android:layout_below="@+id/txt_cul6"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                 />
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="149dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul8"
@@ -378,10 +386,11 @@
                 android:layout_below="@+id/txt_cul7"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                />
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="149dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul9"
@@ -390,10 +399,11 @@
                 android:layout_below="@+id/txt_cul8"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-                />
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="149dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="17dp"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/txt_cul10"
@@ -402,10 +412,11 @@
                 android:layout_below="@+id/txt_cul9"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="18dp"
-               />
+                android:layout_marginStart="149dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"/>
 
         </RelativeLayout>
     </ScrollView>

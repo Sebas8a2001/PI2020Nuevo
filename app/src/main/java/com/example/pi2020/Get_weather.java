@@ -3,6 +3,7 @@ package com.example.pi2020;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.location.Location;
@@ -10,7 +11,9 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.awareness.Awareness;
@@ -34,7 +37,8 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 public class Get_weather<client> extends AppCompatActivity {
     private static final String OPEN_WEATHER_MAP_URL="http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&units=metric";
     private static final String OPEN_WEATHER_MAP_API="6b2715eba21914ebb7bc2dc349ffa929";
-
+    String username,nomcultivo;
+    ImageButton btn_add_crop,btn_profile;
     TextView cityField, detailsField,currentTemperatureField,humidityField,presureField, weatherIcon,updateField;
     Typeface weatherfont;
     static String latitude;
@@ -45,6 +49,31 @@ public class Get_weather<client> extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_weather);
+
+        Bundle bundle= this.getIntent().getExtras();
+        username= bundle.getString("usernameP");
+        nomcultivo=bundle.getString("nomCultivo");
+        btn_add_crop= (ImageButton)findViewById(R.id.btn_addcrop);
+        btn_profile=(ImageButton)findViewById(R.id.btn_profile);
+
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Get_weather.this,Profile1.class);
+                intent.putExtra("usernameP",username);
+                Get_weather.this.startActivity(intent);
+            }
+        });
+        btn_add_crop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Get_weather.this,AddCrop.class);
+                intent.putExtra("usernameP",username);
+                intent.putExtra("nomCultivo",nomcultivo);
+                Get_weather.this.startActivity(intent);
+            }
+        });
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

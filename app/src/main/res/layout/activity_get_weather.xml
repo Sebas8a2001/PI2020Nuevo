@@ -122,6 +122,7 @@
         android:weightSum="10">
 
         <ImageButton
+            android:id="@+id/btn_addcrop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3.3"
@@ -136,7 +137,7 @@
             android:src="@drawable/vector_cloud_selected" />
 
         <ImageButton
-
+            android:id="@+id/btn_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3.3"

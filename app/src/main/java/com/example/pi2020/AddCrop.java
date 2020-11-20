@@ -55,19 +55,14 @@ public class AddCrop extends AppCompatActivity {
         btn_clima=(ImageButton) findViewById(R.id.btn_clima);
         btn_profile=(ImageButton)findViewById(R.id.btn_profile);
 
-        btn_clima.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(AddCrop.this,Get_weather.class);
-                AddCrop.this.startActivity(intent);
-            }
-        });
+
 
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(AddCrop.this,Profile1.class);
                 intent.putExtra("usernameP",usernameP);
+                intent.putExtra("nomCultivo",namCulture);
                 AddCrop.this.startActivity(intent);
             }
         });
@@ -78,6 +73,16 @@ public class AddCrop extends AppCompatActivity {
          namCulture= parameter.getString("nomCultivo");
 
         usernameP= parameter.getString("usernameP");
+
+        btn_clima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AddCrop.this,Get_weather.class);
+                intent.putExtra("usernameP",usernameP);
+                intent.putExtra("nomCultivo",namCulture);
+                AddCrop.this.startActivity(intent);
+            }
+        });
 
 
         Response.Listener<JSONArray> respoListener = new Response.Listener<JSONArray>() {
